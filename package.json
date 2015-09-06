@@ -1,0 +1,25 @@
+{
+  "name": "ng2learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/app.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-tslint": "^3.2.0",
+    "gulp-typescript": "^2.8.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Irving09/NG2Learning.git"
+  },
+  "author": "Inno Estrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Irving09/NG2Learning/issues"
+  },
+  "homepage": "https://github.com/Irving09/NG2Learning#readme"
+}
