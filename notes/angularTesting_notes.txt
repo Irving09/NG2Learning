@@ -1,0 +1,9 @@
+Angular Testing
+
+- Dependency injection for xhr requests can be mocked
+- Provides abstractions which allow you to test your model
+  without having to resort to manipulating the DOM.
+- Angular comes with dependency injection built-in,
+  because you can pass in a component's dependencies and stub or mock them
+- Components that have their dependencies injected allow them
+  - to be easily mocked on a test by test bases.

@@ -1,0 +1,15 @@
+Angular's dependency injection feature
+
+NOTE: Dependency Injection is pervasive throughout Angular.
+
+- Dependency Injection (DI) is a software design pattern that deals with how components get hold of their dependencies
+  (Angular injector subsystem is in charge of creating components, resolving their dependencies, and providing them to other components as requested)
+
+Things that can be injected in Angular:
+	1. Components (injected with service and value)
+		- Services
+		- Directives
+		- Filters
+		- Animations
+	2. Controllers (injected with service and value - can also be injected as special dependency)
+		- 
