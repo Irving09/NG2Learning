@@ -1,0 +1,33 @@
+Component
+	- How we structure and reason about our entire Angular UI
+	- An entire Angular Application is just A TREE OF COMPONENTS
+
+This whole thing is a Component, two main things, Component annotation (@Component) and Component controller (a class in ES6 ==> TodoApp)
+
+@Component({
+	...
+	...
+})
+
+class TodoApp {
+	...
+	...
+}
+
+@Component - This describes what our component actually is, where your component gets wired up in the html
+Example)
+
+	@Component({
+		selector: 'todo-app',			===> Actual HTML tag that will be attached to this component
+		template: new TemplateConfig({	===> This is where your component actuall lives
+			url: 'todos.html'
+		})
+	});
+
+Component Controller (TodoApp) - The controller is what your template reads from
+
+class TodoApp {
+	constructor() {
+		...
+	}
+}

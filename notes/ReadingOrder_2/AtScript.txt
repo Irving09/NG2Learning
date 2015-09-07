@@ -1,0 +1,45 @@
+NOTE:
+	- AtScript is NOT a language to replace Javascript
+	- AtScript is merely syntactical sugar on top of ES6
+	- It works with TypeScript, V8, and others on proposals for TC39 standards committe. AtScript compiles to ES5
+
+In 2014, the Angular team anounced its ECMAScript language extension called,
+AtScript, which adds types and annotations to the Javascript language.
+
+Annotations
+	- AtScript comes with Type Annotations, Field Annotations and Metadata Annotations
+
+Example 1.)
+	Metadata Annotation (@Component and @View)
+
+	@Component({
+		selector: 'tabs'
+	})
+	@View({
+		templateUrl : 'src/components/app/app.html'
+	})
+	export class Tabs {
+		
+	}
+
+In Example 1)
+	- You have a class called Tabs that is basically empty.
+	- It has two annotations (@Component, @View)
+	- @Component is an annotation that tells Angular,
+	  that the class 'Tabs' is a component
+	- @View gives Angular information about the view of the component.
+	  In this case, it is an html file located from the root of the project,
+	  into "src/components/app"
+
+NOTE:
+	- If we had removed all annotations, what would be left is just an empty class
+	  that doesnt have special meaning. This is what annotations are all about.
+	  They are a declarative way to add metadata to code.
+
+Questions?
+	- Where do those annotations come from?
+		import { Component, View } from 'angular2/angular2';
+
+	- Who defined that those annotations are called @Component and @View?
+
+	- What do these annotations translate to so we can use it to today's browsers?

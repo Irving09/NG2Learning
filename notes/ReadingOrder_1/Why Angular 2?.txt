@@ -1,0 +1,18 @@
+Why Angular 2?
+
+- Shadow DOM replaces Transclusion
+- ES6 Modules replaces Angular Modules
+- Angular 2 is 5x faster than Angular 1
+- Angular 1.x has many concepts and have a huge learning curve
+	- Controller
+	- Factory
+	- Service
+	- Provider
+	- Directive
+	- Transclusion
+	- Module
+
+Motivation for Angular 2?
+	- Web Standards
+	- Performance
+	- Simple Cofnitive Model

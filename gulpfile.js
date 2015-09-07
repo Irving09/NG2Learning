@@ -1,6 +1,6 @@
-var gulp 	= require('gulp');
-var tsc 	= require('gulp-typescript');
-var tslint 	= require('gulp-tslint');
+var gulp 		= require('gulp');
+var typescript 	= require('gulp-typescript');
+var tslint 		= require('gulp-tslint');
 
 var ts_lint_config = {
 	configuration: {
@@ -15,15 +15,22 @@ var ts_lint_config = {
 };
 
 gulp.task('lint', function() {
-	return gulp.src('./app/**/*.ts')
-		.pipe(tslint(ts_lint_config))
-        .pipe(tslint.report('full'));
+	var task	= gulp.src('./app/**/*.ts');
+
+	return task
+			.pipe(tslint(ts_lint_config))
+        	.pipe(tslint.report('full'));
 });
 
 gulp.task('compile', ['lint'], function() {
-	return gulp.src(['./app/**/*.ts', './typings/**/*.ts'])
-		.pipe(tsc({ targetL : 'ES5'}))
-		.pipe(gulp.dest('./app.bin'));
+	var srcFiles	= ['./app/**/*.ts', './typings/**/*.ts'];
+	var config      = typescript.createProject('./tsconfig.json'); 
+	var task		= gulp.src(srcFiles);
+
+	return task
+			.pipe(typescript(config))
+			.js
+			.pipe(gulp.dest('./app.bin'));
 });
 
 gulp.task('watch', function() {
