@@ -1,6 +1,7 @@
 var gulp 		= require('gulp');
 var typescript 	= require('gulp-typescript');
 var tslint 		= require('gulp-tslint');
+var clean 		= require('del');
 
 var ts_lint_config = {
 	configuration: {
@@ -22,9 +23,17 @@ gulp.task('lint', function() {
         	.pipe(tslint.report('full'));
 });
 
+gulp.task('clean', function() {
+	var binDirectory = './app.bin';
+
+	clean([binDirectory]).then(function (paths) {
+    	console.log('Deleted folder(s):\n', paths.join('\n'));
+	});
+});
+
 gulp.task('compile', ['lint'], function() {
 	var srcFiles	= ['./app/**/*.ts', './typings/**/*.ts'];
-	var config      = typescript.createProject('./tsconfig.json'); 
+	var config      = typescript.createProject('./tsconfig.json');
 	var task		= gulp.src(srcFiles);
 
 	return task

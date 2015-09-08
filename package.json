@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "app/app.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^2.0.1",
     "gulp": "^3.9.0",
     "gulp-tslint": "^3.2.0",
     "gulp-typescript": "^2.8.2"
   },
-  "devDependencies": {},
   "scripts": {
     "postinstall": "tsd install && gulp",
     "test": "echo \"Error: no test specified\" && exit 1"

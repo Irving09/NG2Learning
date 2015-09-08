@@ -41,5 +41,33 @@ Questions?
 		import { Component, View } from 'angular2/angular2';
 
 	- Who defined that those annotations are called @Component and @View?
+		@Component and @View are an implementation detail of the
+		Angular framework via Classes.
 
 	- What do these annotations translate to so we can use it to today's browsers?
+
+	Annotations are transpiled via AtScript: Traceur.
+
+			@Component({
+				selector: 'tabs'
+			})
+			@View({
+				templateUrl : 'src/components/app/app.html'
+			})
+			export class Tabs {
+				
+			}
+
+			====> Transpiled to the following...
+
+			var Tabs = (function() {
+				function Tabs() {
+					Tabs.annotations = [
+						new Component({ ... });
+						new View({ ... });
+					];
+
+					return Tabs;
+				}
+			})();
+
